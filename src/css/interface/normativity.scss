@@ -1,0 +1,76 @@
+.normativity {
+    padding-top: $spacer *2;
+    padding-bottom: $spacer *2;
+
+    &__content {
+        // gap: $spacer;
+        padding-top: $spacer *2;
+        padding-bottom: $spacer;
+    }
+
+    &__item {
+        // flex: 1;
+        // margin: $spacer *2 $spacer /2 $spacer *3 $spacer /2;
+        // width: 33.33333%;
+        flex: 1 1 380px;
+        margin: $spacer /2;
+        padding: 20px;
+        background-color: $white;
+        @include animate_all(0.2s);
+        box-sizing: border-box;
+
+        & h4, & p {
+            margin-bottom: 0;
+        }
+
+        & p {
+            margin-bottom: 0;
+            @include line-height-short;
+        }
+
+        & a {
+            display: flex;
+            color: $grayu-400;
+
+            &.time {
+                padding-top: $spacer;
+                font-size: 80%;
+            }
+
+            &.uaa {
+                position: relative;
+                padding-bottom: $spacer;
+                color: $grayu;
+                font-size: 84%;
+                @include type-font-medium;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    height: 1px;
+                    left: $spacer;
+                    bottom: $spacer/2;
+                    width: calc(100% - $spacer *2);
+                    background-color: $grayu-200;
+                    transition: 0.3s;
+                }
+            }
+        }
+
+        & h4 a {
+            color: $grayu;
+        }
+
+        &:hover {
+            background-color: $grayu-200;
+
+            & a {
+                color: $grayu-dark;
+            }
+        }
+
+        & a:focus {
+            color: $grayu-dark;
+        }
+    }
+}

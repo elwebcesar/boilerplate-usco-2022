@@ -1,0 +1,355 @@
+﻿{
+    "funcionarios": [
+		{
+			"#": 0,
+			"uaa": "Rectoría (e)", 
+			"nombre": "Nidia Guzmán Duran", 
+			"cargo": "Rectora", 
+			"email": "rectoria@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 871 8310 extensiones: 2103, 2102"
+		},
+		{
+			"#": 1,
+			"uaa": "Secretaría General", 
+			"nombre": "Zully Paola Pinilla Aldana", 
+			"cargo": "Secretaria General", 
+			"email": "secretariageneral@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 8963 extensión: 2131"
+		},
+		{
+			"#": 2,
+			"uaa": "Oficina de Control Interno", 
+			"nombre": "Juan Manuel Charry Mosquera",
+			"cargo": "Jefe Oficina Control Interno", 
+			"email": "controlinterno@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 2461"
+		},
+		{
+			"#": 3,
+			"uaa": "Dirección Administrativa de Control Disciplinario Interno", 
+			"nombre": "Milton Marino Gómez Ortíz",
+			"cargo": "Director Control Disciplinario Interno", 
+			"email": "controldisciplinariointerno@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "Teléfono: +57 (608) 874 5568, Conmutador: +57 (608) 875 4753 extensiones: 1062, 1071"
+		},
+		{
+			"#": 4,
+			"uaa": "Centro de Información, Tecnologías y Control Documental", 
+			"nombre": "John Jairo Trujillo Vera", 
+			"cargo": "Director Centro de Información, Tecnologías y Control Documental", 
+			"email": "ctic@usco.edu.co", 
+			"email_perso": "john.trujillo@usco.edu.co", 
+			"telefono": "+57 (608) 874 0596, Conmutador: +57 (608) 875 4753 extensión: 1007"
+		},
+		{
+			"#": 5,
+			"uaa": "Oficina Asesora de Comunicaciones", 
+			"nombre": "Bernardo Monje Sánchez", 
+			"cargo": "Coordinador Oficina Asesora de Comunicaciones", 
+			"email": "oficinadecomunicaciones@usco.edu.co", 
+			"email_perso": "cheo@usco.edu.co", 
+			"telefono": "+57 (608) 874 0596, Conmutador: +57 (608) 875 4753 extensión: 1007"
+		},
+		{
+			"#": 6,
+			"uaa": "Dirección Administrativa de Bienestar Universitario", 
+			"nombre": "Edgar Cometa Guarnizo", 
+			"cargo": "Director Bienestar Universitario", 
+			"email": "bienestar@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 8754 753 extensiones: 1033, 1058"
+		},
+		{
+			"#": 7,
+			"uaa": "Dirección de Sedes Regionales", 
+			"nombre": "Angélica Cruz Rojas", 
+			"cargo": "Directora de Sedes Regionales", 
+			"email": "direccionsedes@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753"
+		},
+		{
+			"#": 8,
+			"uaa": "Oficina Asesora de Planeación", 
+			"nombre": "Norma Constanza Guarnizo Llanos", 
+			"cargo": "Jefe Oficina Asesora de Planeación", 
+			"email": "planeacion@usco.edu.co", 
+			"email_perso": "jorge.ramos@usco.edu.co", 
+			"telefono": "+57 (608) 875 8774, Conmutador: +57 (608) 875 3686 extensión: 2120"
+		},
+		{
+			"#": 9,
+			"uaa": "Oficina Asesora Jurídica", 
+			"nombre": "Omar Castro Parra", 
+			"cargo": "Jefe Oficina Asesora Jurídica", 
+			"email": "juridica@usco.edu.co", 
+			"email_perso": "jairo.muñoz@usco.edu.co", 
+			"telefono": "+57 (608) 875 2374, Conmutador: +57 (608) 875 3686 extensión: 2147"
+		},
+		{
+			"#": 10,
+			"uaa": "Oficina de Contratación", 
+			"nombre": "Ernesto Cárdenas Vega", 
+			"cargo": "Jefe Oficina de Contratación", 
+			"email": "contratacion@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 874 0604, Conmutador: +57 (608) 874 0604 extensión: 2150"
+		},
+		{
+			"#": 11,
+			"uaa": "Oficina de Aseguramiento de la Calidad", 
+			"nombre": "Carlos Emilio Ardila Ospina", 
+			"cargo": "Jefe de Aseguramiento de la Calidad", 
+			"email": "acredinstitucional@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753"
+		},
+		{
+			"#": 12,
+			"uaa": "Oficina de Relaciones Nacionales e Internacionales", 
+			"nombre": "Joanna Constanza Mitchel Hernandez", 
+			"cargo": "Jefe de Oficina de Relaciones Nacionales e Internacionales", 
+			"email": "orni@usco.edu.co", 
+			"email_perso": "joanna.mitchell@usco.edu.co", 
+			"telefono": "+57 (608) 875 4716 extensión 1090"
+		},
+		{
+			"#": 13,
+			"uaa": "Vicerrectoría Académica", 
+			"nombre": "María Fernanda Jaime Osorio", 
+			"cargo": "Vicerrectora Académica", 
+			"email": "viceacademica@usco.edu.co", 
+			"email_perso": "julio.jaime@usco.edu.co", 
+			"telefono": "<p>Telefax: (57) (8) 875 89 21<br />Conmutador: +57 (608) 875 4753 <br />Extensiones: 1004, 1005, 1047, 1061, 1085.<p>"
+		},
+		{
+			"#": 14,
+			"uaa": "Facultad de Ciencias Exactas y Naturales", 
+			"nombre": "Ruben Dario Valbuena Villarreal", 
+			"cargo": "Decano de la Facultad de Ciencias Exactas y Naturales", 
+			"email": "facien@usco.edu.co", 
+			"email_perso": "rubendario@usco.edu.co", 
+			"telefono": "+57 (608) 875 4753 extensión 1013"
+		},
+		{
+			"#": 15,
+			"uaa": "Facultad de Salud", 
+			"nombre": "Julio César Quintero Vieda", 
+			"cargo": "Decano de la Facultad de Salud", 
+			"email": "facsalud@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 871 8310 extensión 3103"
+		},
+		{
+			"#": 16,
+			"uaa": "Facultad de Economía y Administración", 
+			"nombre": "Germán Darío Hémbuz", 
+			"cargo": "Decano de la Facultad de Economía y Administración", 
+			"email": "faceconomia@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 754 753, extensiones 4150 o +57 (608) 875 8926"
+		},
+		{
+			"#": 17,
+			"uaa": "Facultad de Educación", 
+			"nombre": "Zully Cuéllar López", 
+			"cargo": "Decana de la Facultad de Educación", 
+			"email": "faeducacion@usco.edu.co", 
+			"email_perso": "leonardo.herrera@usco.edu.co", 
+			"telefono": "+57 (608) 875 4753 extensiones: 1123, 1014"
+		},
+		{
+			"#": 18,
+			"uaa": "Facultad de Ciencias Sociales y Humanas", 
+			"nombre": "Willian Sierra Barón", 
+			"cargo": "Decano de la Facultad de Ciencias Sociales y Humanas", 
+			"email": "facultadcsh@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753 extensiones: 1013"
+		},
+		{
+			"#": 19,
+			"uaa": "Facultad de Ciencias Jurídicas y Políticas", 
+			"nombre": "Alberto Polanía Puentes", 
+			"cargo": "Decano de la Facultad de Ciencias Jurídicas y Políticas", 
+			"email": "facultaderecho@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753 extensión: 1042"
+		},
+		{
+			"#": 20,
+			"uaa": "Facultad de Ingeniería", 
+			"nombre": "Romulo Medina Collazos", 
+			"cargo": "Decano de la Facultad de Ingeniería", 
+			"email": "facingenieria@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753  extensiones: 1015, 1173"
+		},
+		{
+			"#": 21,
+			"uaa": "Facultad de Artes", 
+			"nombre": "Rocio Polanía Farfan", 
+			"cargo": "Decana de la Facultad de Artes", 
+			"email": "artes@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": ""
+		},
+		{
+			"#": 22,
+			"uaa": "Dirección de Registro y Control Académico", 
+			"nombre": "Lilia Susana Díaz Charris", 
+			"cargo": "Jefa Dirección de Registro y Control Académico", 
+			"email": "registro@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753  extensiones: 1074, 1010, 1190"
+		},
+		{
+			"#": 23,
+			"uaa": "Dirección General de Currículo", 
+			"nombre": "Marlio Bedoya Cardoso", 
+			"cargo": "Director General de Currículo", 
+			"email": "dircurriculo@usco.edu.co", 
+			"email_perso": "benala57@usco.edu.co", 
+			"telefono": "+57 (608) 875 4753 extensiones: 1177, 1162"
+		},
+		{
+			"#": 24,
+			"uaa": "Dirección General de Posgrados", 
+			"nombre": "", 
+			"cargo": "Jefe Dirección General de Posgrados", 
+			"email": "posgrados@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753"
+		},
+		{
+			"#": 25,
+			"uaa": "Dirección de Bibliotecas", 
+			"nombre": "Carlos Alfonso Sanchez Leyton", 
+			"cargo": "Jefe Dirección de Bibliotecas", 
+			"email": "bibliocentral@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753"
+		},
+		{
+			"#": 26,
+			"uaa": "Dirección de Centro de Graduados", 
+			"nombre": "Edilson Ducuara Castro", 
+			"cargo": "Director de Graduados", 
+			"email": "graduados@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753"
+		},
+		{
+			"#": 27,
+			"uaa": "Comité de Admisiones e Información Profesional", 
+			"nombre": "Yiby Salazar Parra", 
+			"cargo": "Presidenta Comité de Admisiones e Información Profesional", 
+			"email": "", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753"
+		},
+		{
+			"#": 28,
+			"uaa": "Comité de Selección y Evaluación del Personal Docente", 
+			"nombre": "Yiby Salazar Parra", 
+			"cargo": "Presidenta Comité de Selección y Evaluación del Personal Docente", 
+			"email": "", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 4753"
+		},
+		{
+			"#": 29,
+			"uaa": "Vicerrectoría de Investigación y Proyección Social", 
+			"nombre": "Carlos Harvey Salamanca Falla", 
+			"cargo": "Vicerrector de Investigación y Proyección Social", 
+			"email": "viceinvestigaciones@usco.edu.co", 
+			"email_perso": "carlos.salamanca@usco.edu.co", 
+			"telefono": "+57 (608) 874 2125, Conmutador: +57 (608) 875 3686 extensiones: 2160, 2175"
+		},
+		{
+			"#": 30,
+			"uaa": "Dirección General de Investigaciones", 
+			"nombre": "Elías Francisco Amortegui Cedeño", 
+			"cargo": "Director General de Investigación en Vicerrectoría de Investigación y Proyección Social", 
+			"email": "investigaciones@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 874 2125, Conmutador: +57 (608) 875 3686 extensiones: 2160, 2175"
+		},
+		{
+			"#": 31,
+			"uaa": "Dirección Administrativa de Proyección Social y Proyectos Especiales", 
+			"nombre": "Lina Maria Fierro González", 
+			"cargo": "Directora Administrativa de Proyección Social y Proyectos Especiales", 
+			"email": "investigaciones@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 874 2125, Conmutador: +57 (608) 875 3686 extensiones: 2160, 2175"
+		},
+		{
+			"#": 32,
+			"uaa": "Dirección Editorial y de Publicaciones", 
+			"nombre": "Fernando Galindo Perdomo", 
+			"cargo": "Director Administrativa de Proyección Social y Proyectos Especiales", 
+			"email": "bibliocentral@usco.edu.co", 
+			"email_perso": "editorialusco@usco.edu.co", 
+			"telefono": "+57 (608) 874 2125, Conmutador: +57 (608) 875 3686 extensiones: 2160, 2175"
+		},
+		{
+			"#": 33,
+			"uaa": "Centro de Emprendimiento e Innovación", 
+			"nombre": "Cristian Andrés Carvajal Rojas", 
+			"cargo": "Director Centro de Emprendimiento e Innovación", 
+			"email": "", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 874 2125, Conmutador: +57 (608) 875 3686 extensiones: 2160, 2175"
+		},
+		{
+			"#": 34,
+			"uaa": "Comité de Asignación y Reconocimiento de Puntaje - CAP", 
+			"nombre": "Carlos Harvey Salamanca Falla", 
+			"cargo": "Presidente Comité de Asignación y Reconocimiento de Puntaje - CAP", 
+			"email": "", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 874 2125, Conmutador: +57 (608) 875 3686 extensiones: 2160, 2175"
+		},
+		{
+			"#": 35,
+			"uaa": "Vicerrectoría Administrativa", 
+			"nombre": "Ramón Eduardo Bautista Oviedo", 
+			"cargo": "Vicerrector Administrativa", 
+			"email": "viceadministrativa@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 2382, Conmutador +57 (608) 875 3686 extensión: 2106"
+		},
+		{
+			"#": 36,
+			"uaa": "Oficina de Talento Humano", 
+			"nombre": "José Eurípides Sanabria Triana", 
+			"cargo": "Jefe Oficina de Talento Humano", 
+			"email": "talentohumano@usco.edu.co", 
+			"email_perso": "christian.lugo@usco.edu.co", 
+			"telefono": "+57 (608) 875 3686 extensión: 2201"
+		},
+		{
+			"#": 37,
+			"uaa": "Oficina Financiera y de Recursos Físicos", 
+			"nombre": "Diana Patricia Perez Castañeda", 
+			"cargo": "Jefe de Oficina Financiera y de Recursos Físicos", 
+			"email": "divfinanciera@usco.edu.co", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 5900, Conmutador: +57 (608) 875 3686 extensiones: 2133, 2137"
+		},
+		{
+			"#": 38,
+			"uaa": "Comisión de Personal", 
+			"nombre": "", 
+			"cargo": "", 
+			"email": "", 
+			"email_perso": "", 
+			"telefono": "+57 (608) 875 5900"
+		}
+	]
+}

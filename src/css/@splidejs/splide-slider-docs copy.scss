@@ -1,0 +1,108 @@
+.splide-slider-docs .splide {
+
+    // &__track {
+    //     background-color: $black;
+    //     background-color: red;
+    // }
+
+    // & .splide__arrow svg {
+    //     fill: aqua;
+    // }
+
+    // & .splide__arrow:hover:not(:disabled) svg {
+    //     fill: yellow;
+    // }
+
+    &__slide {
+
+        &__event {
+            // position: absolute;
+            display: flex;
+            flex-flow: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            // background-color: aquamarine;
+
+            &  .time {
+                display: flex;
+                width: 100%;
+                // background-color: orange;
+
+                display: flex;
+                width: 100%;
+                flex-flow: column;
+                align-items: center;
+
+                &  a {
+                    display: flex;
+                    width: 100%;
+                    flex-flow: column;
+                    align-items: center;
+                    // background-color: red;
+
+                    &  span {
+                        // font-size: 1.4rem;
+                        @include type-font-medium;
+
+                        &.day {
+                            font-size: 6rem;
+                            @include type-font-extra-heavy;
+                            line-height: 5rem;
+                        }
+                    }
+                }
+            }
+
+            & p {
+                margin: 0;
+                @include line-height-short;
+
+                &.year {
+                    margin: $spacer /3 0 $spacer /2 0;
+                }
+            }
+
+            & a {
+                background-color: aqua;
+            }
+        }
+
+        &__message.centered {
+            background: rgba(0, 0, 0, 0.7);
+
+            & h2 {
+                max-width: 100%;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.5rem;
+        // width: 1.7rem;
+        // height: 1.7rem;
+        width: 3rem;
+        height: 3rem;
+        background: #73807c;
+        border-radius: 50%;
+        transition: background-color .2s ease;
+    
+        &  svg {
+            // width: 48%;
+            // height: 48%;
+            width: 90%;
+            height: 90%;
+            fill: #fff;
+            transition: fill .2s ease;
+        }
+    }
+}

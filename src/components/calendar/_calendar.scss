@@ -1,0 +1,127 @@
+.cld-main {
+  // width: 400px;
+  width: 100%;
+  font-size: .8rem;
+
+  & svg {
+    fill: $wine;
+  }
+}
+
+.cld-datetime {
+    display: flex;
+    justify-content: space-around;
+    // position: relative;
+    // width: 66%;
+    margin: 0 auto 1rem auto;
+    min-width: 100px;
+    max-width: 300px;
+
+    & .today {
+      position: relative;
+      float: left;
+      width: calc(100% - 40px);
+      margin: auto;
+      font-size: 1rem;
+      @include type-font-heavy;
+      text-align: center;
+    }
+}
+
+.cld-nav{
+  // position: relative;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  width: 20px;
+  // height: 20px;
+  // margin-top: 2px;
+  border: transparent;
+  background: none;
+
+  &:hover, &:focus {
+    & svg{
+      fill: $grayu-500;
+    }
+  }
+}
+
+.cld-rwd {
+  // float: left;
+  padding-left: 3px;
+}
+.cld-fwd {
+  // float: right;
+  padding-right: 3px;
+}
+
+.cld-labels {
+  clear: both;
+  padding: 1rem 0;
+  @include type-font-heavy;
+  // text-transform: uppercases;
+  background-color: $grayu-100;
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+.cld-days {
+  border: 1px solid $grayu-100;
+  border-radius: 0 0 $border-radius $border-radius;
+}
+
+// .cld-labels, .cld-days {
+//   padding-left: 0;
+// }
+
+.cld-label, .cld-day {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 14.28%;
+  text-align: center;
+}
+
+.cld-day {
+  // background-color: $grayu-100;
+  // border: 1px solid $grayu-200;
+
+  &.today .cld-number{
+    background: $grayu-200;
+    // border-radius: $border-radius;
+  }
+
+  &.disableDay {
+    opacity: 0.5;
+  }
+
+  &.nextMonth, &.prevMonth {
+    // background-color: $grayu-200;
+    // opacity: 0.33;
+    opacity: 0.2;
+  }
+}
+
+.cld-number{
+  position: relative;
+  margin: 0;
+  // padding: 10px 8px;
+  padding: 6px 0;
+
+  &.eventday {
+    padding: 0;
+    font-weight: bold;
+
+    & a {
+      display: block;
+      padding: 6px 0;
+      color: $white;
+      // background: darken($grayu-500, 15%);
+      background-color: $wine;
+      // border-radius: $border-radius;
+
+      &:hover {
+        color: $white;
+        background-color: $grayu;
+      }
+    }
+  }
+}

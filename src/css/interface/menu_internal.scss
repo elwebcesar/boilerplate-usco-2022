@@ -1,0 +1,44 @@
+.menu_internal {
+    @include type-font-title;
+
+    & ul {
+        display: flex;
+        justify-content: center;
+
+        & li {
+            margin: 0 !important;
+            padding: 0 !important;
+            min-width: 140px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            border-left: 1px solid $wine;
+
+            &::before {
+                display: none;
+            }
+
+            &:first-child {
+                border: none;
+            }
+
+            & a {
+                flex: 1;
+                margin: $spacer /2 $spacer /2;
+                padding: $spacer /2 $spacer /2;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+    .menu_internal ul {
+        flex-flow: column;
+        border-left: 1px solid $wine;
+
+        & li {
+            text-align: left;
+            border: none;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+$logos_height: 60px;
+$logos_padding: 12px;
+$govco_height: 14px;
+$govco_padding: 4px;
+
+$top_main-nav_breakpointst: $logos_height + ($logos_padding * 2) + $govco_height + ($govco_padding * 2);
+
+.header {
+    padding: 0;
+    background-color: $wine;
+
+    & .logos {
+        padding: $logos_padding 0;
+
+        & img {
+            height: $logos_height;
+        }
+
+        &__to_home {
+            padding-right: .6rem;
+        }
+    }
+
+    & .language {
+        width: 50px;
+        justify-content: end;
+    }
+
+    & .menu_main {
+        position: relative;
+        z-index: 20;
+        flex: 1;
+    }
+
+    & .menu_second {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.govco {
+    padding: 4px 0;
+    background-color: #0066cd;
+
+    & img {
+        max-height: $govco_height;
+    }
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "menu_break")) {
+    .header {
+        & .menu_main {
+            position: inherit;
+        }
+
+        & .menu_second {
+            height: .4rem;
+
+            & .main-nav-second {
+                display: none;
+            }
+        }
+    }
+
+    .main-nav {
+        position: absolute;
+        top: $top_main-nav_breakpointst;
+        left: 0px;
+        width: 100%;
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+    .header .language {
+        position: absolute;
+        z-index: 20;
+        right: 10px;
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "xm")) {
+
+    $logos_height: 50px;
+    $logos_padding: 10px;
+
+    $top_main-nav_breakpointst: $logos_height + ($logos_padding * 2) + $govco_height + ($govco_padding * 2);
+
+    .header .logos {
+        padding: $logos_padding 0;
+
+        & img {
+            height: $logos_height;
+        }
+    }
+
+    .main-nav {
+        top: $top_main-nav_breakpointst;
+    }
+}

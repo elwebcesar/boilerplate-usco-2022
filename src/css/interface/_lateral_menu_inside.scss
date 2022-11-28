@@ -1,0 +1,57 @@
+.lateral_menu_inside {
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-flow: column;
+        padding: $spacer 0;
+        @include type-font-title;
+        text-align: right;
+        border-right: 1px solid $ocher-dark;
+
+        & li {
+            border-top: 1px solid $ocher-dark;
+
+            &:last-child {
+                border-bottom: 1px solid $ocher-dark;
+            }
+
+            & a {
+                display: block;
+                padding: $spacer $spacer / 2;
+                color: $grayu-500;
+                background-color: transparent;
+
+                &:hover, &:focus {
+                    color: $grayu-dark;
+                    background-color: $ocher-400;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+    .lateral_menu_inside ul {
+        width: 100%;
+        // flex-flow: row;
+        margin: 0;
+        padding: 0;
+        // background-color: $wine;
+        border-right: none;
+
+        & li {
+            & a {
+                text-align: center;
+                padding: $spacer $spacer / 2;
+                // color: $white;
+                // background-color: transparent;
+
+                // &:hover, &:focus {
+                //     color: $grayu-dark;
+                //     background-color: $ocher-400;
+                // }
+            }
+        }
+    }
+}

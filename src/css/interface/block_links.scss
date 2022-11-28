@@ -1,0 +1,216 @@
+.block_links {
+    background-position: center right;
+    background-repeat: no-repeat;
+
+    &__links {
+        position: relative;
+        display: flex;
+        padding: $spacer * 2 0;
+        background-color: $ocher;
+
+        & .lateral_menu_inside {
+            margin-right: $spacer + .25;
+            width: $spacer * 16;
+        }
+
+        &__students__content {
+            padding-top: $spacer;
+
+            & h5 {
+                position: relative;
+    
+                &:before {
+                    content: "";
+                    position: absolute;
+                    height: 1px;
+                    left: 0;
+                    bottom: -4px;
+                    width: 100%;
+                    background-color: $ocher-dark;
+                    transition: 0.3s;
+                }
+            }
+
+            & .content-expose ul {
+                margin: 0 ;
+            }
+        }
+    }
+
+    &__slash {
+        position: relative;
+        display: flex;
+        width: 100px;
+        overflow: hidden;
+        padding: $spacer * 2 0;
+
+        &::after {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            content: "";
+            border-left: 90px solid $ocher;
+            border-bottom: 360px solid transparent;
+            border-left-color: $ocher;
+        }
+    }
+   
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "lg")) {
+    .block_links {
+        &__slash {
+            &::after {
+                border-left: 30px solid $ocher;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+    .block_links {
+        background-size: auto;
+        background-position: bottom right;
+
+        & .container-bxl {
+            padding: 0;
+            justify-content: space-between;
+        }
+
+        &__links {
+            display: flex;
+            flex-flow: column;
+            padding: 0;
+            width: 100%;
+            background: none;
+
+            & .lateral_menu_inside {
+                width: 100%;
+
+                & ul {
+                    background-color: $wine;
+
+                    & li {
+                        & a {
+                            color: $white;
+            
+                            &:hover, &:focus {
+                                color: $white;
+                                background-color: $wine-dark;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__students {
+                position: relative;
+                overflow: hidden;
+                display: flex;
+    
+
+                &__content {
+                    padding-top: 0;
+
+                    & h5 {
+                        margin: 0;
+                        padding: $spacer * 2 $spacer *5 $spacer $spacer *3;
+                        background-color: $ocher;
+
+                        &:before {
+                            bottom: 12px;
+                        }
+                    }
+
+                    & .content-expose {
+                        margin: 0;
+                        padding-left: $spacer *3;
+                        padding-bottom: $spacer;
+                        background-color: $ocher;
+
+                        & ul {
+                            margin: 0;
+
+                            & li:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+                &__slash {
+                    position: relative;
+                    display: flex;
+                    width: 100px;
+                    overflow: hidden;
+                    padding: $spacer * 2 0;
+                
+                    &::after {
+                        position: absolute;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        border-left: 70px solid $ocher;
+                        border-bottom: 360px solid transparent;
+                        border-left-color: $ocher;
+                    }
+                }
+            }
+        }
+
+        &__slash {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+    .block_links {
+        background-position-x: 140%;
+        background-position-y: bottom;
+
+        &__links {
+            &__students {
+                &__content {
+                    & h5,  & .content-expose {
+                        padding-left: $spacer *2;
+                    }
+                }
+
+                &__slash {
+                    &::after {
+                        border-left: 30px solid $ocher;
+                    }
+                }
+            }
+        }          
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "xm")) {
+    .block_links__links__students {
+        &__content {
+            & h5 {
+                text-align: center;
+
+                &:before {
+                    bottom: 12px;
+                    width: 50%;
+                    left: 50%;
+                    margin-left: -25%;
+                }
+            }
+
+            & h5,  & .content-expose {
+                padding-right: $spacer *2;
+            }
+        }
+
+        &__slash {
+            display: none;
+        }
+    }
+}

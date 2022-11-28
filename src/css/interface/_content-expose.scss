@@ -1,0 +1,102 @@
+.content-expose {
+   //  @include box;
+   //  border: 1px solid aqua;
+   
+   // -----------------------------------------------------------------------------------------------------------------
+   // :: Lists
+   // -----------------------------------------------------------------------------------------------------------------
+
+    & ul, ol {
+       margin-bottom: $spacer * 2;
+
+       & li:not(.responsive-tabs__list__item, .tab-group__tab-btn) {
+          padding-bottom: 0.6rem;
+
+          // &:last-child,
+          &:last-child:not(.responsive-tabs__list__item, .tab-group__tab-btn), 
+          & ul li:last-child, & ol li:last-child
+          {
+             padding: 0;
+          }
+       }
+
+       & ul, & ol {
+          margin-top: 0.4rem;
+          margin-bottom: 0;
+       }
+    }
+
+
+    & ul {
+       list-style: none;
+
+       // & li {
+      & li:not(.responsive-tabs__list__item, .tab-group__tab-btn, .tab-group__tab-li) {
+         margin-left: 0.7rem;
+
+          &::before {
+            position: absolute;
+             content: "\203A";
+            //  padding-right: 0.4rem;
+            margin: -0.3rem 0 0  -0.7rem;
+            font-size: 1.2rem;
+            // color: green;
+             color: $wine;
+          }
+       }
+
+       & ul {
+          margin-left: $spacer;
+       }
+    }
+}
+
+
+.link_fx1 {
+   a {
+      position: relative;
+      color: $grayu-500;
+      // text-decoration: underline;
+
+      &:before {
+         content: "";
+         position: absolute;
+         height: 1px;
+         left: 0;
+         bottom: 0;
+         width: 0%;
+         background-color: $gray-600;
+         transition: 0.3s;
+      }
+
+      &:hover, &:focus, &:visited {
+         color: $grayu-dark;
+
+         &:before {
+            width: 100%;
+            background-color: $wine;
+         }
+      }
+
+      &:visited {
+         color: $grayu-400;
+      }
+    }
+}
+
+
+// $exceptionsList: ":not(.responsive-tabs__list__item, .tab-group__tab-btn)";
+
+// $exceptionsList:: (responsive-tabs__list__item, tab-group__tab-btn);
+
+// @for $i from 0 through $exceptionsList {
+//    .#{$i} { order: $i; }
+// }
+
+// https://www.bufa.es/sass-variables-dentro-de-clases/
+//http://alfonsomarin.com/sass-iii-mixins-interpolacion-y-directivas-de-control/
+
+// $nombre: "leon";
+// .#{$nombre}-footer {
+//    color: yellow;
+// }

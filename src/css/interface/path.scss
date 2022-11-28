@@ -1,0 +1,11 @@
+.path {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: 44px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='1440' height='44' viewBox='0 0 1440 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M682.485 43.011C197.675 43.011 25.491 14.337 0 0V44H1440V0C1389.5 14.337 1167.29 43.011 682.485 43.011Z' fill='%238F141B'/%3e%3c/svg%3e");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}

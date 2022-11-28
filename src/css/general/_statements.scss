@@ -1,0 +1,44 @@
+@mixin box {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin animate_all($time) {
+    transition: all $time ease;
+}
+
+@mixin grid-base($width) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    // max-width: $grid-desktop-breakpoint;
+    // width: $width;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@mixin line-height-short {
+    line-height: $spacer + $spacer/4;
+}
+
+@mixin center-absolute {
+    // position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+@mixin underline($color) {
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 1px;
+        bottom: -16px;
+        left: 50%;
+        margin-left: -50px;
+        background-color: $color;
+    }
+}

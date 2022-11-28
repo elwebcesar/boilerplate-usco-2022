@@ -1,0 +1,589 @@
+// This file is best viewed with Tab size 4 code indentation
+
+
+// -----------------------------------------------------------------------------------------------------------------
+// 1. Theme Quick Settings (Variables)
+// (for further control, you will need to dig into the actual CSS in 2.)
+// -----------------------------------------------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------
+// :: 1.1. Colors
+// ----------------------------------------------------------
+
+// $sm-usco__wine:									#fff !default;
+$sm-usco__wine:										$wine !default;
+// $sm-usco__contrast:									$white !default;
+$sm-usco__contrast:									$gray-300 !default;
+
+$sm-usco__gray:										darken($sm-usco__wine, 6.5%) !default;
+$sm-usco__gray-dark:								darken($sm-usco__wine, 26.5%) !default;
+$sm-usco__gray-darker:								darken($sm-usco__wine, 66.5%) !default;
+
+$sm-usco__box-shadow:								rgba(0, 0, 0, 0.2) !default;
+
+
+// ----------------------------------------------------------
+// :: 1.2. Breakpoints
+// ----------------------------------------------------------
+
+// $sm-usco__desktop-vp:								768px !default;		// switch from collapsible to desktop
+$sm-usco__desktop-vp:								map-get($grid-breakpoints, "menu_break") !default;
+
+// ----------------------------------------------------------
+// :: 1.3. Typography
+// ----------------------------------------------------------
+
+// $sm-usco__font-family:								"Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Arial, sans-serif !default;
+$sm-usco__font-size-base:							14px !default;
+$sm-usco__font-size-small:							14px !default;
+$sm-usco__line-height:								17px !default;
+
+
+// ----------------------------------------------------------
+// :: 1.4. Borders
+// ----------------------------------------------------------
+
+$sm-usco__border-width:								1px !default;
+
+
+// ----------------------------------------------------------
+// :: 1.5. Collapsible main menu
+// ----------------------------------------------------------
+
+// Menu box
+$sm-usco__collapsible-bg:							$sm-usco__wine !default;
+$sm-usco__collapsible-border-color:					$sm-usco__gray-dark !default;
+$sm-usco__collapsible-box-shadow:					0 1px 1px $sm-usco__box-shadow !default;
+
+// Items
+// $sm-usco__collapsible-item-color:					$sm-usco__gray-darker !default;
+$sm-usco__collapsible-item-color:					$sm-usco__contrast !default;
+
+$sm-usco__collapsible-item-current-color:			$sm-usco__wine !default;
+$sm-usco__collapsible-item-current-bg:				$sm-usco__gray-darker !default;
+// $sm-usco__collapsible-item-disabled-color:			darken($sm-usco__wine, 20%) !default;
+$sm-usco__collapsible-item-disabled-color:			lighten($sm-usco__wine, 30%) !default;
+$sm-usco__collapsible-item-padding-vertical:		10px !default;
+$sm-usco__collapsible-item-padding-horizontal:		20px !default;
+
+// Items separators
+$sm-usco__collapsible-separators-color:				rgba(0, 0, 0, 0.05) !default;
+
+// Toggle button (sub menu indicators)
+$sm-usco__collapsible-toggle-bg:					rgba(0, 0, 0, 0.08) !default;
+
+
+// ----------------------------------------------------------
+// :: 1.6. Collapsible sub menus
+// ----------------------------------------------------------
+
+// Menu box
+$sm-usco__collapsible-sub-bg:						rgba(darken($sm-usco__collapsible-bg, 30%), 0.1) !default;
+
+// Items text indentation for deeper levels
+$sm-usco__collapsible-sub-item-indentation:			8px !default;
+
+
+// ----------------------------------------------------------
+// :: 1.7. Desktop main menu and sub menus
+// ----------------------------------------------------------
+
+// Menu box
+$sm-usco__desktop-bg:								$sm-usco__wine !default;
+
+// Items
+// $sm-usco__desktop-item-color:						$sm-usco__gray-darker !default;
+$sm-usco__desktop-item-color:						$sm-usco__collapsible-item-color !default;
+$sm-usco__desktop-item-hover-bg:					$sm-usco__gray !default;
+$sm-usco__desktop-item-current-color:				$sm-usco__wine !default;
+$sm-usco__desktop-item-current-bg:					$sm-usco__gray-darker !default;
+// $sm-usco__desktop-item-disabled-color:				darken($sm-usco__wine, 20%) !default;
+$sm-usco__desktop-item-disabled-color:				$sm-usco__collapsible-item-disabled-color;
+
+
+// $sm-usco__desktop-item-padding-vertical:			11px !default;
+// $sm-usco__desktop-item-padding-horizontal:			20px !default;
+$sm-usco__desktop-item-padding-vertical:			9px !default;
+$sm-usco__desktop-item-padding-horizontal:			9px !default;
+
+// Items separators
+$sm-usco__desktop-separators-size:					1px !default;
+$sm-usco__desktop-separators-color:					$sm-usco__gray !default;
+
+// Sub menu indicators
+$sm-usco__desktop-arrow-spacing:					4px !default;
+
+
+// -----------------------------------------------------------------------------------------------------------------
+// 2. Theme CSS
+// -----------------------------------------------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------
+// :: 2.1. Collapsible mode (mobile first)
+// ----------------------------------------------------------
+
+// calc item height and sub menus toggle button size
+$sm-usco__item-height: $sm-usco__line-height + $sm-usco__collapsible-item-padding-vertical * 2;
+// set toggle button size to 80% of item height
+$sm-usco__toggle-size: floor($sm-usco__item-height * 0.8);
+// $sm-usco__toggle-spacing: floor($sm-usco__item-height * 0.1);
+$sm-usco__toggle-spacing: floor($sm-usco__item-height * 0.1);
+
+// Main menu box
+.sm-usco {
+	background: $sm-usco__collapsible-bg;
+	// border: $sm-usco__border-width solid $sm-usco__collapsible-border-color;
+	// box-shadow: $sm-usco__collapsible-box-shadow;
+
+	// Main menu items
+	a {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			padding: $sm-usco__collapsible-item-padding-vertical $sm-usco__collapsible-item-padding-horizontal;
+			/* make room for the toggle button (sub indicator) */
+			padding-right: $sm-usco__collapsible-item-padding-horizontal + $sm-usco__toggle-size + $sm-usco__toggle-spacing;
+			color: $sm-usco__collapsible-item-color;
+			// font-family: $sm-usco__font-family;
+			font-size: $sm-usco__font-size-base;
+			font-weight: normal;
+			line-height: $sm-usco__line-height;
+			text-decoration: none;
+		}
+
+		&.current {
+			background: $sm-usco__collapsible-item-current-bg;
+			color: $sm-usco__collapsible-item-current-color;
+		}
+
+		&.disabled {
+			color: $sm-usco__collapsible-item-disabled-color;
+		}
+
+		// Toggle buttons (sub menu indicators)
+		.sub-arrow {
+			position: absolute;
+			top: 50%;
+			// margin-top: -(ceil($sm-usco__toggle-size / 2));
+			// left: auto;
+			// right: $sm-usco__toggle-spacing;
+			// width: $sm-usco__toggle-size;
+			// height: $sm-usco__toggle-size;
+			// overflow: hidden;
+			// font: bold #{$sm-usco__font-size-small}/#{$sm-usco__toggle-size} monospace !important;
+			// text-align: center;
+			// text-shadow: none;
+			// background: $sm-usco__collapsible-toggle-bg;
+			// background-color: green;
+
+			// top: auto;
+			// margin-top: 0;
+			// bottom: 2px;
+			// left: 50%;
+			// margin-left: -5px;
+			// right: auto;
+
+			// width: 0;
+			// height: 0;
+			// border-width: 4px;
+			// border-style: solid dashed dashed dashed;
+			// // border-color: $sm-usco__contrast transparent transparent transparent;
+			// border-color: $gray-500 transparent transparent transparent; 
+			// border-radius: 0;
+
+			right: $sm-usco__toggle-spacing*4;
+			margin-top: -10px;
+			padding: 10px 14px;
+			background-color: $wine-dark;
+			border-radius: 0;
+
+			&::before {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				margin: -4px 0 0 -8px;
+				border-width: 8px;
+				border-style: solid dashed dashed dashed;	
+				border-color: $grayu-300 transparent transparent transparent; 
+				border-radius: $border-radius-lg;
+			}
+		}
+		// .sub-arrow::before {
+		// 	// content: '+';
+		// 	display: none;
+		// }
+		// &.highlighted .sub-arrow::before {
+		// 	content: '-';
+		// }
+	}
+
+	// Main menu items separators
+	li {
+		border-top: 1px solid $sm-usco__collapsible-separators-color;
+	}
+    //     > li:first-child {
+	// 	border-top: 0;
+	// }
+
+	// Sub menus box
+	ul {
+		background: $sm-usco__collapsible-sub-bg;
+
+		&.duo {
+			flex-flow: column;
+		}
+
+		// Sub menus items
+		a {
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				font-size: $sm-usco__font-size-small;
+				// add indentation for sub menus text
+				// border-left: $sm-usco__collapsible-sub-item-indentation solid transparent;
+			}
+		}
+
+		// Add indentation for sub menus text for deeper levels
+		@include sm-usco__sub-items-indentation($sm-usco__collapsible-sub-item-indentation);
+	}
+}
+
+
+// ----------------------------------------------------------
+// :: 2.2. Desktop mode
+// ----------------------------------------------------------
+
+@media (min-width: $sm-usco__desktop-vp) {
+
+	/* Switch to desktop layout
+	-----------------------------------------------
+	   These transform the menu tree from
+	   collapsible to desktop (navbar + dropdowns)
+	-----------------------------------------------*/
+	/* start... (it's not recommended editing these rules) */
+	.sm-usco ul{position:absolute;width:12em;}
+	.sm-usco li{float:left;}
+	.sm-usco.sm-rtl li{float:right;}
+	.sm-usco ul li,.sm-usco.sm-rtl ul li,.sm-usco.sm-vertical li{float:none;}
+	// .sm-usco a{white-space:nowrap;}
+	.sm-usco ul a,.sm-usco.sm-vertical a{white-space:normal;}
+	// .sm-usco .sm-nowrap > li > a,.sm-usco .sm-nowrap > li > :not(ul) a{white-space:nowrap;}
+	/* ...end */
+
+	// Main menu box
+	.sm-usco {
+		background: $sm-usco__desktop-bg;
+
+		// Main menu items
+		a {
+			&,
+			&:hover,
+			&:focus,
+			&:active,
+			&.highlighted {
+				padding: $sm-usco__desktop-item-padding-vertical $sm-usco__desktop-item-padding-horizontal;
+				// color: $sm-usco__desktop-item-color;
+			}
+
+			&:hover,
+			&:focus,
+			&:active,
+			&.highlighted {
+				// background: $sm-usco__desktop-item-hover-bg;
+				color: $white;
+			}
+
+			&.current {
+				background: $sm-usco__desktop-item-current-bg;
+				color: $sm-usco__desktop-item-current-color;
+			}
+
+			&.disabled {
+				background: $sm-usco__desktop-bg;
+				color: $sm-usco__desktop-item-disabled-color;
+			}
+
+			// Make room for the sub arrows
+			&.has-submenu {
+				// padding-right: $sm-usco__desktop-item-padding-horizontal + 8px + $sm-usco__desktop-arrow-spacing;
+				padding-right: $sm-usco__desktop-item-padding-horizontal + 4px + $sm-usco__desktop-arrow-spacing;
+			}
+
+			// // Sub menu indicators
+			.sub-arrow {
+				top: 50%;
+			// 	margin-top: -8px;
+			// 	right: $sm-usco__desktop-item-padding-horizontal;
+			right: $sm-usco__toggle-spacing + 2;
+			// 	width: 8px;
+			// 	height: 16px;
+			// 	font: #{$sm-usco__font-size-small}/16px monospace !important;
+				margin-top: 0;
+				padding: 0;
+				background: transparent;
+
+							// width: 0;
+				height: 0;
+				border-width: 4px;
+				border-style: solid dashed dashed dashed;
+				// border-color: $sm-usco__contrast transparent transparent transparent;
+				border-color: $gray-500 transparent transparent transparent; 
+				border-radius: 0;
+
+				&::before {
+					display: none;
+				}
+			}
+			// reset mobile first style
+			&.highlighted .sub-arrow::before {
+				content: '+';
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 1px;
+				bottom: 0;
+				left: 0;
+				background-color: $gray-600;
+				visibility: hidden;
+				transform: scaleX(0);
+				transition: all 0.3s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+			  }
+
+			  &:hover:before, &:focus:before {
+				visibility: visible;
+				transform: scaleX(1);
+			  }
+		}
+
+		li ul li a {
+			&:hover,
+			&:focus,
+			&:active {
+				background: $sm-usco__desktop-item-hover-bg;
+			}
+		}
+
+		// Main menu items separators
+		// > li {
+		// 	border-top: 0;
+		// 	// border-left: $sm-usco__desktop-separators-size solid $sm-usco__desktop-separators-color;
+
+		// 	// &:first-child {
+		// 	// 	border-left: 0;
+		// 	// }
+		// }
+
+		// Sub menus box
+		ul {
+			// border: $sm-usco__border-width solid $sm-usco__collapsible-border-color;
+			background: $sm-usco__desktop-bg;
+			box-shadow: $sm-usco__collapsible-box-shadow;
+
+			&.duo {
+				// display: flex;
+				flex-flow: wrap;
+
+				width: 40em !important;
+				max-width: 40em !important;
+
+				& > li {
+					display: flex;
+					// float: left;
+					width: 50%;
+					border-left: $sm-usco__desktop-separators-size solid $sm-usco__desktop-separators-color;
+
+					& a {
+						display: flex;
+						flex: 1;
+						align-items: center;
+					}
+				}
+			}
+
+			// Sub menus items
+			a {
+				border: 0 !important;
+
+				// No need for additional room for the sub arrows
+				&.has-submenu {
+					padding-right: $sm-usco__desktop-item-padding-horizontal;
+				}
+
+				// Sub menu indicators
+				.sub-arrow {
+					// left: $sm-usco__desktop-item-padding-horizontal - 8px - $sm-usco__desktop-arrow-spacing;
+					// right: auto;
+					// background: yellow;
+					top: 50%;
+					margin-top: -5px;
+					// border-color: transparent transparent transparent $sm-usco__contrast;
+					border-color: transparent transparent transparent $gray-500;					
+				}
+			}
+
+			// Sub menus items separators
+			> li {
+				border-left: 0;
+				border-top: $sm-usco__desktop-separators-size solid $sm-usco__desktop-separators-color;
+
+				&:first-child {
+					border-top: 0;
+				}
+			}
+		}
+
+		// Scrolling arrows containers for tall sub menus - test sub menu: "Sub test" -> "more..." in the default download package
+		.scroll-up,
+		.scroll-down {
+			position: absolute;
+			display: none;
+			visibility: hidden;
+			overflow: hidden;
+			background: $sm-usco__desktop-bg;
+			height: 20px;
+			// width and position will be set automatically by the script
+		}
+		.scroll-up-arrow,
+		.scroll-down-arrow {
+			position: absolute;
+			top: -2px;
+			left: 50%;
+			margin-left: -8px;
+			// we will use one-side border to create a triangle so that we don't use a real background image, of course, you can use a real image if you like too
+			width: 0;
+			height: 0;
+			overflow: hidden;
+			border-width: 8px; // tweak size of the arrow
+			border-style: dashed dashed solid dashed;
+			border-color: transparent transparent $sm-usco__desktop-item-color transparent;
+		}
+		.scroll-down-arrow {
+			top: 6px;
+			border-style: solid dashed dashed dashed;
+			border-color: $sm-usco__desktop-item-color transparent transparent transparent;
+		}
+
+
+		// Rigth-to-left
+
+		// Main menu box
+		&.sm-rtl {
+
+			// Main menu items
+			a {
+				// Make room for the sub arrows
+				&.has-submenu {
+					padding-right: $sm-usco__desktop-item-padding-horizontal;
+					padding-left: $sm-usco__desktop-item-padding-horizontal + 8px + $sm-usco__desktop-arrow-spacing;
+				}
+
+				// Sub menu indicators
+				.sub-arrow {
+					left: $sm-usco__desktop-item-padding-horizontal;
+					right: auto;
+				}
+			}
+
+			// Vertical main menu items
+			// &.sm-vertical {
+			// 	a {
+
+			// 		// No need for additional room for the sub arrows
+			// 		&.has-submenu {
+			// 			padding: $sm-usco__desktop-item-padding-vertical $sm-usco__desktop-item-padding-horizontal;
+			// 		}
+
+			// 		// Sub menu indicators
+			// 		.sub-arrow {
+			// 			left: auto;
+			// 			right: $sm-usco__desktop-item-padding-horizontal - 8px - $sm-usco__desktop-arrow-spacing;
+			// 		}
+			// 	}
+			// }
+
+			// Main menu items separators
+			> li {
+				&:first-child {
+					border-left: $sm-usco__desktop-separators-size solid $sm-usco__desktop-separators-color;
+				}
+				&:last-child {
+					border-left: 0;
+				}
+			}
+
+			// Sub menus box
+			ul {
+				a {
+
+					// No need for additional room for the sub arrows
+					&.has-submenu {
+						padding: $sm-usco__desktop-item-padding-vertical $sm-usco__desktop-item-padding-horizontal;
+					}
+
+					// Sub menu indicators
+					.sub-arrow {
+						left: auto;
+						right: $sm-usco__desktop-item-padding-horizontal - 8px - $sm-usco__desktop-arrow-spacing;
+					}
+				}
+			}
+		}
+
+
+		// Vertical main menu
+
+		// Main menu box
+		// &.sm-vertical {
+
+		// 	// Main menu items
+		// 	a {
+
+		// 		// Sub menu indicators
+		// 		.sub-arrow {
+		// 			left: $sm-usco__desktop-item-padding-horizontal - 8px - $sm-usco__desktop-arrow-spacing;
+		// 			right: auto;
+		// 		}
+		// 	}
+
+		// 	// Main menu items separators
+		// 	li {
+		// 		border-left: 0;
+		// 		border-top: $sm-usco__desktop-separators-size solid $sm-usco__desktop-separators-color;
+		// 	}
+		// 	> li:first-child {
+		// 		border-top: 0;
+		// 	}
+		// }
+	}
+}
+
+
+// ----------------------------------------------------------
+// :: 2.3. Mega menu
+// ----------------------------------------------------------
+
+.mega-menu {
+    &__display {
+        width:400px;
+        max-width:100%;
+
+        &__wrapped {
+            // padding:5px 24px;
+            padding: 0.8rem 1.4rem;
+            color: $white;
+        }
+    }
+}
+

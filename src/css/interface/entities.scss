@@ -1,0 +1,42 @@
+.entities {
+    margin-top: $spacer *4;
+    margin-bottom: $spacer *4;
+
+    &__content {
+        max-width:  map-get($grid-breakpoints, "menu_break");
+
+        & a {
+            display: flex;
+            align-items: center;
+            margin: $spacer $spacer + $spacer /2;
+
+            & img {
+                opacity: .6;
+                filter: grayscale(100%);
+                filter: gray; /* IE5+ */
+                transform: scale(.9);
+            }
+
+            &:hover, &:focus {
+                img {
+                    opacity: 1;
+                    filter: grayscale(0%);
+                    transform: scale(1);
+                    filter: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "lg")) {
+    .entities a {
+        margin: $spacer /2 $spacer;
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "xm")) {
+    .entities a {
+        margin: $spacer;
+    }
+}

@@ -1,0 +1,81 @@
+.banners {
+  padding: $spacer*2 0;
+  @include type-font-title;
+  font-size: $spacer*2;
+
+  & .container-sm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 990px;
+
+    & div {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  & a {
+    margin: $spacer/2 0;
+    flex-grow: 1;
+    box-sizing: border-box;
+
+    & img {
+      width: 100%;
+    }
+
+    &:hover {
+      & img {
+       opacity: .7;
+      }
+    }
+  }
+
+  & .single {
+    width: 100%;
+  }
+
+  & .dual {
+    padding: 0 .5rem;
+    width: 50%;
+  }
+
+  & .triple {
+    padding: 0 .5rem;
+    width: 33.33333333%;
+  }
+
+  &__text {
+    display: flex;
+    padding: $spacer $spacer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: $wine;
+    background-color: $ocher;
+
+    &.fondo_gris {
+      color: $white;
+      background-color: $grayu;
+    }
+
+    &.fondo_vino {
+      color: $white;
+      background-color: $wine;
+    }
+
+    &:hover {
+      color: $white;      
+      background-color: $grayu-400;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .banners {  
+    & .container-sm div {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}

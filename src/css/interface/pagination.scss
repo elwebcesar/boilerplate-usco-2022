@@ -1,0 +1,47 @@
+.pagination {
+    margin: $spacer * 2 0;
+    list-style: none;
+    font-size: $spacer * .8;
+
+    & li {
+        margin: 0 $spacer / 2;
+    }
+
+    & button, & span {
+        padding: $spacer / 2 $spacer - .2;
+        border-radius: $spacer * 3;
+    }
+
+    & span {
+        line-height: $spacer * 2;
+        color: $white;
+        background-color: $grayu;
+    }
+
+    & button {
+        background-color: $ocher;
+
+        &:hover, &:focus {
+            color: $white;
+            background-color: $wine;
+        }
+        
+        &.disabled {
+            &,  &:hover, &:focus {
+                cursor: inherit;
+                color: $grayu-300;
+                background-color: $grayu-200;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+    .pagination {
+        & li {
+            &.prev, &.next {
+                display: none;
+            }
+        }
+    }
+}

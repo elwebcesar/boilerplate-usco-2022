@@ -1,0 +1,128 @@
+/*
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+Frontend: Cesar Fernandez
+https://www.linkedin.com/in/cesar-fernandez-797436207/
+For: Universidad Surcolombiana
+www.usco.edu.co
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+*/
+
+// normalize
+@import "./general/credit.css";
+@import "./normalize/normalize.min.css";
+
+
+//general
+@import "./general/statements";
+@import "./general/font";
+@import "./general/animations";
+
+
+// bootstrap-4
+@import "./bootstrap-4.6/functions";
+@import "./bootstrap-4.6/variables";
+@import "./bootstrap-4.6/mixins";
+
+
+// doom basic
+@import "./general/doom";
+
+
+//mixin
+@import "./mixin/overflow";
+
+
+// GRID - bootstrap-4
+@import "./bootstrap-4.6/bootstrap-grid";
+@import "./bootstrap-4.6/mixins/deprecate";
+@import "./bootstrap-4.6/mixins/breakpoints";
+// @import "./bootstrap-4.6/mixins/grid-framework";
+// @import "./bootstrap-4.6/mixins/grid";
+
+// @import "./bootstrap-4.6/utilities/display"; // include in /bootstrap-grid
+// @import "./bootstrap-4.6/utilities/flex";
+@import "./bootstrap-4.6/utilities/spacing";
+@import "./bootstrap-4.6/utilities/position";
+
+
+// [class^=col], .d-flex div {
+// 	border: 1px solid orchid;
+// }
+
+
+// bootstrap-4
+@import "./bootstrap-4.6/forms";
+@import "./bootstrap-4.6/buttons";
+
+@import "./interface/buttons_usco";
+
+
+
+// UTILITIES - bootstrap-4
+// @import "./bootstrap-4.6/utilities";
+@import "./bootstrap-4.6/utilities/background";
+@import "./bootstrap-4.6/utilities/text";
+
+
+// @splidejs/splide
+@import "./@splidejs/splide_slider";
+@import "./@splidejs/splide-slider-docs";
+
+
+// COMPONENTS
+@import "../components/calendar/calendar";
+@import "../components/detailsAnimate/details";
+@import "../components/plainDropdown/plainDropdown";
+// @import "../components/ImageResizeMap/ImageResizeMap";
+
+// SVGInject
+@import "./general/SVGInject";
+
+
+// JQUERY - PLUGINS
+// smartmenus
+// @import "../js/jquery/plugins/smartmenus/sm-core-css.css";
+// @import "../js/jquery/plugins/smartmenus/sm-blue.css";
+// @import "../js/jquery/plugins/smartmenus/sm-blue/sm-blue";
+@import "../js/jquery/plugins/smartmenus/sm-core-css";
+@import "../js/jquery/plugins/smartmenus/sm-usco/sm-usco";
+@import "../js/jquery/plugins/smartmenus/second/second";
+
+@import "../js/jquery/plugins/aria-tabs/aria-tabs";
+@import "../js/jquery/plugins/responsive-tabs/responsive-tabs";
+
+
+// INTERFACE USCO
+@import "./interface/interface";
+@import "./interface/lateral_menu_inside";
+@import "./interface/content-expose";
+@import "./interface/pseudo_ico";
+
+// TABLES
+@import "./general/table_base";
+@import "./general/table_responsive";
+
+// PRINT - bootstrap-4
+@import "./bootstrap-4.6/print";
+
+
+// @import "./bootstrap-4.6/utilities/align";
+
+// @import "./bootstrap-4.6/utilities/borders";
+// @import "./bootstrap-4.6/utilities/clearfix";
+// @import "./bootstrap-4.6/utilities/display";
+// @import "./bootstrap-4.6/utilities/embed";
+// @import "./bootstrap-4.6/utilities/flex";
+// @import "./bootstrap-4.6/utilities/float";
+// @import "./bootstrap-4.6/utilities/interactions";
+// @import "./bootstrap-4.6/utilities/overflow";
+// @import "./bootstrap-4.6/utilities/position";
+// @import "./bootstrap-4.6/utilities/screenreaders";
+// @import "./bootstrap-4.6/utilities/shadows";
+// @import "./bootstrap-4.6/utilities/sizing";
+// @import "./bootstrap-4.6/utilities/spacing";
+// @import "./bootstrap-4.6/utilities/stretched-link";
+// @import "./bootstrap-4.6/utilities/visibility";
+

@@ -1,0 +1,82 @@
+details {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: $spacer;
+  --detailContentHeight:  auto;
+  border: 1px solid $gray-400;
+
+  & > div {
+    padding: $spacer;
+    overflow:hidden; /* wrap margins */
+    transition: margin-top 0.3s;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  // &.xxxx {
+  &.closed {
+
+    & summary {
+      background-color: $grayu-200;
+    }
+
+    & > div {
+      margin-top:var(--detailContentHeight);
+    }
+  }
+}
+
+summary {
+  position: relative;
+  display: block; /* turns off the open indicator on modern UA's */
+  padding:1rem 3em 1em 1em;
+  background: $ocher;
+  // color: $white;
+  cursor: pointer;
+
+  // outline-width: 0;
+  outline-offset: -0.1rem;
+  outline-color: transparent;
+  animation: all .2s linear 0s 1 normal;
+
+
+  &::-webkit-details-marker {
+    display:none;
+  }
+
+  &:after {
+    position:absolute;
+    top: 1.375rem;
+    right: 1rem;
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: top;
+    border: 0.5em solid transparent;
+    border-top-color: $grayu-400;
+    border-bottom-width: 0;
+    transition:transform 0.5s;
+  }
+
+  &:focus {
+    outline-offset: -0.4rem;
+    border-radius: 0.6rem;
+  }
+}
+
+details[open]:not(.closed) > summary:after {
+// details[open]:not(.xxxx) > summary:after {
+    transform: rotateX(180deg);
+}
+
+
+
+// details.closed > div {
+//   margin-top:var(--detailContentHeight);
+//   margin-top:100px;
+//   background-color: red;
+// }

@@ -1,0 +1,128 @@
+// -----------------------------------------------------------------------------------------------------------------
+// :: Maps - colors, heights, margins
+// -----------------------------------------------------------------------------------------------------------------
+
+$color-list: (
+  white: $white,
+  wine: $wine,
+  wine-dark: $wine-dark,
+  ocher: $ocher,
+  grayu: $grayu,
+  grayu-100: $grayu-100,
+  grayu-200: $grayu-200,
+  grayu-300: $grayu-300,
+  grayu-400: $grayu-400,
+  grayu-500: $grayu-500
+);
+
+@each $name, $color in $color-list {
+    .back_#{$name} {
+        background-color: $color;
+    }
+}
+
+@each $name, $color in $color-list {
+    .color_#{$name} {
+        color: $color;
+    }
+}
+
+$heights-list: (
+  s: .5rem,
+  m: .1rem,
+  l: 1.5rem
+);
+
+@each $name, $height in $heights-list {
+    .height_#{$name} {
+        height: $height;
+    }
+}
+
+$margin-list: (
+  s: 1rem,
+  m: 2rem,
+  l: 3rem
+);
+
+@each $name, $height in $margin-list {
+    .margin_x_#{$name} {
+        margin: $height 0;
+    }
+}
+
+@each $name, $height in $margin-list {
+    .padding_x_#{$name} {
+        padding: $height 0;
+    }
+}
+
+@each $name, $height in $margin-list {
+    .padding_t_#{$name} {
+        padding-top: $height;
+    }
+}
+
+// $list: dog cat bird dolphin;
+// @each $i in $list {
+// 	.xxxxxxx-#{$i} { color: blue; }
+// }
+
+
+// -----------------------------------------------------------------------------------------------------------------
+// :: View only movil resolution
+// -----------------------------------------------------------------------------------------------------------------
+
+[class*="only_movil-"] {
+  display: block !important;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+
+        .only_movil-#{$breakpoint} {
+            display: none !important;
+        }
+    }
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------
+// :: Generals
+// -----------------------------------------------------------------------------------------------------------------
+
+svg, path {
+    transition: fill .2s ease;
+}
+
+.underline {
+    @include underline($grayu-300);
+}
+
+// -----------------------------------------------------------------------------------------------------------------
+// :: userway
+// -----------------------------------------------------------------------------------------------------------------
+
+.uwy {
+    z-index: 1 !important;
+}
+
+// -----------------------------------------------------------------------------------------------------------------
+// :: Imports
+// -----------------------------------------------------------------------------------------------------------------
+
+@import "./header/";
+@import "./access/";
+@import "./path/";
+@import "./banners";
+@import "./news";
+@import "./pagination";
+@import "./block_links";
+@import "./normativity";
+@import "./events";
+@import "./offer";
+@import "./entities";
+@import "./footer";
+@import "./internal";
+@import "./menu_internal";
+@import "./dual";

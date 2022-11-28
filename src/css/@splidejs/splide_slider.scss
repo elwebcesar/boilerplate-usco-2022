@@ -1,0 +1,180 @@
+@import "./config/";
+
+// https://splidejs.com/guides/autoplay/
+
+.splide-slider .splide {
+
+    &__track {
+        background-color: $black;
+    }
+
+    & .splide__arrow {
+        & svg {
+            fill: $grayu-200;
+        }
+
+        &:hover:not(:disabled) svg {
+            fill: $white;
+        }
+    } 
+
+    &__slide {
+        position: relative;
+        opacity: .4;
+
+        @include animate_all(0.2s);
+
+        &.is-active {
+            opacity: 1;
+        }
+
+        &__message {
+            position: absolute;
+            display: flex;
+            align-items: stretch;
+            height: 100%;
+            background: linear-gradient(259.15deg, rgba(0, 0, 0, 0) 9%, rgba(0, 0, 0, 0.8) 70%);
+
+            & h2 {
+                display: flex;
+                align-items: stretch;
+                max-width: 70%;
+                height: 100%;
+                font-size: 2.2rem;
+                font-weight: normal;
+                color: $white;
+                box-sizing: content-box;
+
+                & a {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 ($spacer*2);
+                    color: $white;
+                }
+            }
+        }
+
+        &__message.centered {
+            background: rgba(0, 0, 0, 0.6);
+
+            & h2 {
+                max-width: 100%;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__pagination li {
+        margin: 0 .4rem;
+    }
+
+    &__toggle {
+        position: absolute;
+        z-index: 1;
+        // top: $grid-gutter-width * 2;
+        bottom: $grid-gutter-width * .2;
+        right: $grid-gutter-width * .5 + $grid-gutter-width * .2 + 8;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        background: rgba(76, 97, 108, 0.7);
+        border: 3px solid $white;
+        border-radius: 50%;
+        opacity: .7;
+        // transition: background-color .2s ease;
+        @include animate_all(0.3s);
+    
+        &  svg {
+            // width: 48%;
+            // height: 48%;
+            width: 70%;
+            height: 70%;
+            fill: #fff;
+            // transition: fill .2s ease;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "xl")) {
+    .splide-slider .splide {
+
+        &__slide {
+            &__message h2 {
+                max-width: 90%;
+                font-size: 2rem;
+                background-color: rgba(255, 0, 0, 0.4);
+            }
+        }
+
+        // &__toggle {
+        //     top: inherit;
+        //     bottom: $grid-gutter-width * .5;
+        // }
+    }
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "lg")) {
+    .splide-slider .splide {
+
+        &__slide {
+            &__message h2 {
+                max-width: 100%;
+                font-size: 1.6rem;
+                background-color: rgba(255, 255, 0, 0.4);
+
+                a {
+                    padding-right: $grid-gutter-width * .5 *3;
+                    padding-left: $grid-gutter-width * .5 *3;
+                }
+            }
+        }
+    }
+
+    .splide__arrow {
+        &--prev {
+            left: $grid-gutter-width * .1;
+        }
+        &--next {
+            right: $grid-gutter-width * .1;
+        }
+    }
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+    .splide-slider .splide {
+
+        &__slide {
+            &__message h2 {
+                font-size: 1.4rem;
+                background-color: rgba(255, 0, 255, 0.4);
+            }
+        }
+    }
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "xm")) {
+    .splide-slider .splide {
+
+        &__slide {
+            &__message h2 {
+                font-size: 1.2rem;
+                background-color: rgba(0, 255, 255, 0.4);
+            }
+        }
+    }
+}

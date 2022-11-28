@@ -1,0 +1,68 @@
+// https://codepen.io/ebhoren/pen/gzNZOr
+
+.table-responsive {
+
+  th, td {
+    padding: 12px 10px;
+    
+    @media (max-width: 767px) {
+      display: flex;
+    }
+  }
+  
+  /* INDIVIDUAL CELL HEADING STYLES */
+  tbody {
+    .cell-header {
+      flex: 0 0 160px;
+      width: 160px;
+      padding: 12px 10px;
+      margin: -12px 10px -12px -10px;
+      background-color: $table-th-bg;
+    }
+  }
+}
+
+
+/* MOBILE MODE */
+@media (max-width: map-get($grid-breakpoints, "md")) {
+  .table-responsive {
+    /* even if table headers are visually hidden, it's necessary to set row as block level to avoid weird bug on VoiceOver */
+    thead {
+      position: absolute !important;
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+
+    tr:not(:last-child) {
+      display: block;
+      margin-bottom: $spacer/2;
+    }
+  }
+}
+
+
+/* TABLET MODE */
+@media (min-width: map-get($grid-breakpoints, "md")) {
+  .table-responsive {
+    // background: #fff;
+    
+    // tbody {
+    //   tr {
+    //     background: none;
+    //     box-shadow: none;
+    //     margin-bottom: 0;
+    //   }
+    // }
+    
+    /* SET CELLS WIDTH */
+    // thead, tbody {
+    //   th, td {
+    //     width: 25%;
+    //   }
+    // }
+    
+    /* HIDE INVIDUAL CELL HEADING */
+    tbody .cell-header {
+      display: none;
+    }
+  }
+}

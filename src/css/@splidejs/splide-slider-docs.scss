@@ -1,0 +1,114 @@
+.splide-slider-docs .splide {
+
+    &__slide {
+        display: flex;
+        justify-content: center;
+        padding: 0 $spacer /2;
+
+        &__event {
+            flex: 1;
+            display: flex;
+            flex-flow: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start;
+            color: $grayu;
+
+            &  .time {
+                display: flex;
+                width: 100%;
+                // background-color: orange;
+
+                display: flex;
+                width: 100%;
+                flex-flow: column;
+                align-items: center;
+
+                &  span {
+                    // font-size: 1.4rem;
+                    @include type-font-medium;
+
+                    &.day {
+                        font-size: 6rem;
+                        @include type-font-extra-heavy;
+                        line-height: 5rem;
+                        color: $grayu-300;
+                    }
+                }
+            }
+
+            & p {
+                margin: 0;
+                @include line-height-short;
+
+                &.year {
+                    margin: $spacer /3 0 $spacer /2 0;
+                    font-size: 90%;
+                }
+            }
+
+            &:hover, &:focus {
+                color: $grayu-dark;
+
+                & span.day {
+                    color: $grayu-400;
+                }
+            }
+        }
+
+    }
+
+    &__arrow {
+        & svg {
+            fill: $grayu;
+        }
+
+        &:hover:not(:disabled) svg {
+            fill: $grayu-500;
+        }
+
+        &--prev {
+            // left: $grid-gutter-width * .1;
+            left: -$spacer + $spacer /2;
+        }
+        &--next {
+            right: -$spacer + $spacer /2;
+        }
+    }
+
+    &__toggle {
+        position: absolute;
+        z-index: 1;
+        top: -$spacer *4;
+        // bottom: $grid-gutter-width * .2;
+        right: $grid-gutter-width * .5 + $grid-gutter-width * .2 + 8;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        background: rgba(76, 97, 108, 0.7);
+        border: 3px solid $white;
+        border-radius: 50%;
+        opacity: .7;
+        // transition: background-color .2s ease;
+        @include animate_all(0.3s);
+    
+        &  svg {
+            // width: 48%;
+            // height: 48%;
+            width: 70%;
+            height: 70%;
+            fill: #fff;
+            // transition: fill .2s ease;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__pagination {
+        bottom: -$spacer *2;
+    }
+}

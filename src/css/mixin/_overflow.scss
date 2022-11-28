@@ -1,0 +1,7 @@
+@mixin overflow-x-auto {
+	overflow-x: auto;
+}
+
+.overflow-x-auto {
+	@include overflow-x-auto;
+}

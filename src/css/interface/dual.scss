@@ -1,0 +1,38 @@
+.dual {
+    display: flex;
+
+    .lateral {
+        margin-right: $spacer + .25;
+        width: $spacer *14;
+
+        & .lateral_menu_inside ul li {
+            padding-bottom: 0 !important;
+
+            &::before {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .info {
+        flex: 1;
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+    .dual {
+        flex-flow: column;
+
+        .lateral {
+            width: 100%;
+        }
+    }
+}

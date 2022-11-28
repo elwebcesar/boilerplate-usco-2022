@@ -1,0 +1,142 @@
+.responsive-tabs {
+
+	&__heading {
+		display: none;
+	}
+
+	&__list {
+		display: flex;
+		font-size: 110%;
+		margin: 10px 0 0 0;
+		line-height: 110%;
+		// border-bottom: 1px solid #DBE0E2;
+		border-bottom: 1px solid $grayu-200;
+	}
+
+	&__list__item {
+		display: inline;
+		// padding: 10px 20px;
+		// margin-right: 5px;
+		padding: ($spacer - 0.3 ) ($spacer * 2.5) ($spacer - 0.4 ) ($spacer * 2.5);
+		margin-right: ($spacer * .5);
+		// background: #DBE0E2;
+		background: $grayu-100;
+		cursor: pointer;
+		border-bottom: 0.3rem solid $grayu-200;
+		border-radius: $border-radius  $border-radius 0 0;
+
+		&:hover {
+			// background: #F6F7F8;
+			background: $ocher;
+		}
+
+		&--active, &--active:hover {
+			// color: #fff;
+			// background-color: #8F141B;
+			margin-top: -($spacer - 0.6 );
+			padding-top: ($spacer - 0.1 );
+			color: $white;
+			background-color: $wine;
+			border-bottom-color: $ocher;
+		}
+	}
+
+	&__panel {
+		padding-top: $spacer;
+	}
+	
+}
+
+
+@media ( max-width : 767px) {
+	.responsive-tabs__list {
+		display: none;
+	}
+
+	.responsive-tabs__heading {
+		position: relative;
+		display: block;
+		cursor: pointer;
+
+		margin: 0;
+		padding: $spacer;
+		font-size: 110%;
+		background-color: $grayu-200;
+		border-bottom: 1px solid $grayu-300;
+
+		&:after {
+			position:absolute;
+			top: 1.375rem;
+			right: 1rem;
+			content: '';
+			display: inline-block;
+			width: 0;
+			height: 0;
+			vertical-align: top;
+			border: 0.5em solid transparent;
+			border-top-color: $grayu-400;
+			border-bottom-width: 0;
+			transition:transform 0.5s;
+		}
+
+		&--active {
+			background-color: $ocher;
+
+			&:after {
+				transform: rotateX(180deg);
+			}
+		}
+	}
+
+	.responsive-tabs__panel {
+		padding-right: $spacer;
+		padding-left: $spacer;
+
+		&--closed-accordion-only {
+			display: none;
+		}
+	}
+}
+
+@media ( min-width : 768px) {
+	.responsive-tabs__panel--closed-accordion-only {
+		display: block !important;
+	}
+}
+
+// /* END - Required for core functionality */
+
+// /* OPTIONAL - Basic Skin */
+// .responsive-tabs-wrapper {
+// 	/*	clear: both;*/
+// 	zoom: 1;
+// 	margin-bottom: 30px;
+// }
+
+// .responsive-tabs-wrapper:before, .responsive-tabs-wrapper:after {
+// 	content: "";
+// 	display: table;
+// }
+
+// .responsive-tabs-wrapper:after {
+// 	clear: both;
+// }
+
+// .responsive-tabs__heading:focus, .responsive-tabs__list__item:focus {
+// 	outline: 1px solid #ccc;
+// }
+
+// .responsive-tabs__heading--active:focus,
+// 	.responsive-tabs__list__item--active:focus {
+// 	outline: none !important;
+// }
+
+
+
+
+// /*
+
+// */
+// .responsive-tabs__panel ul {
+// 	margin-top: 20px;
+// }

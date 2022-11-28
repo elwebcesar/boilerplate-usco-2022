@@ -1,0 +1,65 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 0.7rem;
+
+    & .button {
+        padding: .3rem .8rem .2rem .3rem;
+        color: $gray-300;
+        cursor: pointer;
+        background-color: $grayu-500;
+        border-radius: $border-radius-lg;
+
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: 0.2rem;
+            margin-top: -1%;
+            width: 0;
+            height: 0;
+            content: '';
+            border-width: 4px;
+            border-style: solid dashed dashed dashed;
+            border-color: $gray-400 transparent transparent transparent;
+            background: transparent;
+            border-radius: 0;
+        }
+    }
+
+    & .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 20;
+        overflow: hidden;
+        border-radius: 0 $border-radius-lg $border-radius-lg $border-radius-lg;
+
+        & a {
+            display: block;
+            padding: .3rem 1.1rem;
+            color: $gray-700;
+            background-color: $ocher;
+    
+            &:hover {
+                color: $white;
+                background-color: $gray-700;
+            }
+        }
+    }
+
+    &:hover, &:focus {
+        & .button {
+            border-radius: $border-radius-lg $border-radius-lg 0 0;
+        }
+
+        & .dropdown-content {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "bxl")) {
+    .dropdown .dropdown-content {
+        right: 0;
+        border-radius: $border-radius-lg 0 $border-radius-lg $border-radius-lg;
+    }
+}

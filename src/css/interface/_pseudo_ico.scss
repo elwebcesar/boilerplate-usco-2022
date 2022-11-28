@@ -1,0 +1,148 @@
+$link_target: '[target=_blank]';
+$link_external: '[href*="//"]:not([href*="usco"])';
+$link_document: '[href*="/documento/"]';
+$link_pdf: '[href$=".pdf"]';
+$link_word: '[href*=".doc"]';
+$link_excel: '[href*=".xl"]';
+$link_email: '[href^="mailto:"]';
+$link_zip: '[href$=".zip"]';
+$link_rar: '[href$=".rar"]';
+$link_tel: '[href^="tel:"]';
+$link_ppt: '[href*=".ppt"]';
+
+$selectors_links_ico: $link_target, $link_external, $link_document, $link_pdf, $link_word, $link_excel, $link_email, $link_zip, $link_rar, $link_tel, $link_ppt;
+
+$fa_file: "\f016";
+
+// $icons: (
+//     target: "\f08e",
+//     external: "\f08e",
+//     document: $fa_file,
+//     pdf: "\f1c1",
+//     word: "\f1c2",
+//     excel:  "\f1c3",
+//     email: "\f003",
+//     zip: "\f019",
+//     rar: "\f019",
+//     tel: "\f095",
+//     ppt: "\f1c4",
+// );
+
+/*
+    target: "\f08e",
+    external: "\f08e",
+    document: "\f016",
+    // video: "\f16a",
+    pdf: "\f1c1",
+    word: "\f1c2",
+    word2: "\f1c2",
+    excel:  "\f1c3",
+    excel2:  "\f1c3",
+    email: "\f003",
+    zip: "\f019",
+    rar: "\f019",
+    tel: "\f095",
+    ppt: "\f1c4",
+*/
+
+$list_links: (
+    target: $link_target,
+    external: $link_external,
+    document: $link_document,
+    pdf: $link_pdf,
+    word: $link_word,
+    excel: $link_excel,
+    email: $link_email,
+    zip: $link_zip,
+    rar: $link_rar,
+    tel: $link_tel,
+    ppt: $link_ppt,
+);
+
+.pseudo_ico {
+
+    & a {
+        position: relative;
+        margin-bottom: 0px;
+        // padding-bottom: 5px;
+        // padding: 0 2px;
+        transition: 300ms ease-in-out;
+        // background-color: orange;
+        color: $grayu-500;
+        text-decoration: underline;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            bottom: 0;
+            width: 0px;
+            height: 1px;
+            background: $wine;
+            transition-property: width;
+            transition-duration: 300ms;
+            transition-timing-function: ease-in-out; 
+        }
+
+        &:visited {
+            color: $grayu-400;
+        }
+
+        &:hover, &:focus {
+            color: $wine;
+            // background-color: $grayu-100;
+            text-decoration: none;
+
+            &::after {
+                left: 0px;
+                right: auto;
+                width: 100%;
+              }
+        }
+    }
+
+    & a#{$selectors_links_ico} {
+        padding-left: 1.2em;
+
+        &::before {
+            font-family: FontAwesome;
+            font-style: normal;
+            font-variant-caps: normal;
+            font-variant-ligatures: normal;
+            font-weight: 900;
+            position: absolute;
+            // top: .2rem;
+            left: 0;
+            display: inline-block;
+            // margin-right: .5em;
+            // padding-right: .5em;
+            vertical-align: middle;
+            // content: "\f0c1";
+            content: $fa_file;
+        }
+
+        &[href*="//"]:not([href*="usco"]) {
+            padding-left: 1.3em;
+        }
+
+        &[href*="//"]:not([href*="usco"])::before {
+            content: "\f08e";
+        }
+
+        &[href^="mailto:"]::before {
+            content: "\f003";
+        }
+
+        &[href^="tel:"]::before {
+            content: "\f095";
+        }
+    }
+
+
+
+    // @each $key, $value in $list_links {
+    //     & a#{$value}::before {
+    //         content: map-get($icons, $key);
+    //     }
+    // }
+}

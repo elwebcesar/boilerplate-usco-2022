@@ -1,0 +1,149 @@
+$header_min_height: 180px;
+
+.internal {
+    &__header {
+        position: relative;
+        overflow: hidden;
+        background-color: $wine-dark;
+
+        &--title {
+            position: absolute;
+            z-index: 4;
+            @include center-absolute;
+            padding-top: $spacer;
+            height: 100%;
+            color: $ocher;
+            text-align: center;
+
+            & h1, & h2 {
+                margin: 0;
+            }
+
+            & h2 {
+                position: relative;
+                margin-top: $spacer /2;
+                font-size: 140% !important;
+                @include type-font-medium;
+                @include underline($ocher);
+            }
+        }
+
+        &--over {
+            width: 100%;
+            background-color: rgba($wine-dark, .8);    
+
+            &, div {
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+            }
+
+            &--l, &--r {
+                width: 24%;
+            }
+            &--l {
+                background: linear-gradient(90deg, $wine-dark 40%, rgba($wine-dark, 0) 100%);
+                border-left: 80px solid $wine-dark;
+            }
+            &--r {
+                right: 0;
+                background: linear-gradient(90deg, rgba($wine-dark, 0) 0%, $wine-dark 40%);
+                border-right: 80px solid $wine-dark;
+            }
+        }
+
+        &--img {
+            margin: 0 auto;
+            max-width: 1200px;
+            min-height: $header_min_height;
+            border: 2px solid;
+
+            & img {
+                width: 100%;
+                min-height: $header_min_height;
+                object-fit: cover;
+                object-position: center center;
+            }    
+        }
+    }
+
+    &__content {
+        padding-top: $spacer *3;
+        padding-bottom: $spacer *3;
+        max-width: map-get($grid-breakpoints, "lg");
+
+        & hr {
+            margin: $spacer *5 auto;
+            max-width: $spacer *14;
+            color: $ocher;
+            background-color: $ocher;
+        }
+
+        & .message {
+            margin: $spacer *2 0;
+            padding: $spacer 0;
+            text-align: center;
+            border: 2px solid $ocher;
+            border-left: none;
+            border-right: none;
+        }
+
+        & table p:last-child {
+            margin-bottom: 0;
+        }
+
+        & .details-group {
+            margin-bottom: $spacer * 2;
+        }
+
+        & div button {
+            margin: $spacer/2 $spacer ;
+        }
+
+        & a:hover {
+            .injectable {
+                & path {
+                    fill: $grayu;
+                }
+            }
+        }
+
+        & a.no_underline:hover::after {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "menu_break")) {
+    .internal {
+        &__header {
+            &--title {
+                padding-top: 0;
+            }
+
+            &--over div {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+    $headingSizesSM: (2.2rem, 2rem, 1.8rem, 1.6rem, 1.4rem, 1.2rem);
+
+    .internal {
+        @for $i from 1 through 6 {
+            & h#{$i} {
+               font-size: nth($headingSizesSM, $i);
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+    .internal__header--img {
+        &, & img {
+            min-height: 210px;
+        }
+    }
+}

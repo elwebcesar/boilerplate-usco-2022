@@ -1,0 +1,62 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $spacer;
+  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+
+  caption {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  thead,
+  tbody,
+  tfoot {
+    width: 100%;
+  }
+
+  th {
+    background-color: $table-th-bg;
+    vertical-align: center;
+  }
+
+  th, td {
+    padding: $table-cell-padding;
+    // border-top: $table-border-width solid $table-border-color;
+    border: $table-border-width solid $table-border-color;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  // th, td {
+  //   word-break: break-all;
+  // }
+
+  tr {
+    &:nth-child(even) {
+      background-color: $table-nth-child-bg;
+    }
+
+    // &:hover {
+    //   // outline: .2rem solid $focus;
+    //   // outline-offset: .2rem;
+    //   // border-radius: $border-radius-sm;
+
+    //   // background-color: darken($table-nth-child-bg, 10%);
+    //   background-color: lighten($ocher, 12%);
+    // }
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+}

@@ -1,0 +1,107 @@
+@import '_mixins.scss';
+
+// the variables + the CSS
+@import '_sm-usco-theme.scss';
+
+
+/* Mobile menu toggle button */
+.main-menu-btn {
+    // margin: 5px 10px;
+    position: relative;
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    text-indent: 29px;
+    white-space: nowrap;
+    overflow: hidden;
+    // cursor: pointer;
+    // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+
+    /* hamburger icon */
+    &-icon,
+    &-icon:before,
+    &-icon:after {
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        height: 2px;
+        width: 24px;
+        background: $ocher;
+        // -webkit-transition: all 0.25s;
+        transition: all 0.25s;
+    }
+
+    &-icon:before {
+        content: '';
+        top: -7px;
+        left: 0;
+    }
+      
+    &-icon:after {
+        content: '';
+        top: 7px;
+        left: 0;
+    }
+}
+
+#main-menu-state {
+  background-color: gold;
+  border: 3px solid red;
+}
+
+/* x icon */
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon {
+  height: 0;
+  background: transparent;
+
+  &:before {
+    top: 0;
+    // -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+
+/* hide menu state checkbox (keep it visible to screen readers) */
+#main-menu-state {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+
+    /* hide the menu in mobile view */
+    // &:not(:checked) ~ #main-menu {
+    &:not(:checked) ~ * #main-menu {
+
+      display: none;
+    }
+
+    &:checked ~ #main-menu {
+        display: block;
+    }
+}
+
+
+@media (min-width: map-get($grid-breakpoints, "menu_break")) {
+  /* hide the button in desktop view */
+  .main-menu-btn {
+    position: absolute;
+    top: -99999px;
+  }
+  /* always show the menu in desktop view */
+  // #main-menu-state:not(:checked) ~ #main-menu {
+  #main-menu-state:not(:checked) ~ * #main-menu {
+      display: block;
+  }
+}

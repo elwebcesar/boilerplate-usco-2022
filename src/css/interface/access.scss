@@ -1,0 +1,147 @@
+$access_input_width: 210px;
+$access_btn_width: 80px;
+
+$access_form_width: $access_input_width + $access_btn_width + $grid-gutter-width * .5 * 2;
+
+.access {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+    &::before {
+        content: '';
+        border-right: 24px solid $grayu;
+        border-bottom: 45px solid transparent;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background-color: $grayu;
+    }
+
+    & ul {
+        display: flex;
+        align-items: center;
+        padding: .8rem $grid-gutter-width * .5 .5rem 0;
+        list-style: none;
+
+        & li {
+            padding-left: $grid-gutter-width * .5;
+
+            & a {
+                padding: $grid-gutter-width * .2;
+            }
+
+            & button {
+                background: none;
+            }
+
+            & a, button {
+                & svg.injectable path {
+                    fill: $ocher;
+                }
+
+                &:hover, &:focus {
+                    svg.injectable path {
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    & form.form_search {
+        position: relative;
+        display: flex;
+        padding-right: $grid-gutter-width * .5;
+        width: 0;
+        opacity: 0;
+        @include animate_all(0.4s);
+
+        &.display {
+            width: $access_form_width;
+            opacity: 1;
+        }
+
+        & input, & button {
+            margin: 0;
+            padding: $grid-gutter-width * .5 / 4 $grid-gutter-width * .5;
+            box-sizing: border-box;
+        }
+
+        & input {
+            width: $access_input_width;
+            border: 2px solid $grayu-400;
+            border-right: none;
+            background-color: $grayu-200;
+            border-radius: $border-radius-lg 0 0 $border-radius-lg;
+            @include animate_all(0.3s);
+
+            &.error {
+                border-color: $red;
+            }
+        }
+
+        & button {
+            width: $access_btn_width;
+            color: $white;
+            background-color: $wine;
+            border: 1px solid transparent;
+            border-radius: 0 $border-radius-lg $border-radius-lg 0;
+        }
+
+        & .validation_response {
+            position: absolute;
+            left: 0px;
+            bottom: -23px;
+            padding: 5px $grid-gutter-width * .5;
+            color: $white;
+            font-size: .8rem;
+            background-color: $red;
+            border-radius: 0  0 $border-radius-lg $border-radius-lg;
+            opacity: 0;
+            @include animate_all(0.3s);
+
+            &.show {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+
+    $access_form_width: $access_input_width + $access_btn_width;
+
+    .access {
+        position: relative;
+        justify-content: center;
+        background-color: $grayu;
+
+        &::before {
+            display: none;
+        }
+
+        & ul {
+            padding-right: 0;
+        }
+
+        & form.form_search.display {
+            width: $access_form_width;
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+    .access form.form_search.display {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50px;
+        margin: 0 auto;
+    }
+}

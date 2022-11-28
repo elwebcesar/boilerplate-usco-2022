@@ -1,0 +1,75 @@
+.events {
+    padding-top: $spacer *2;
+
+    &__content {
+        padding-top: $spacer *3;
+
+        h4 {
+            display: none;
+        }
+
+        &__calendar {
+            width: 25%;
+            padding-right: $spacer /2;
+            box-sizing: border-box;
+        }
+
+        &__slider {
+            width: 75%;
+            padding: 0 $spacer;
+            box-sizing: border-box;
+
+            &--align {
+                position: relative;
+                top:50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "lg")) {
+    .events {
+        &__content {
+            &__calendar {
+                width: 40%;
+            }
+    
+            &__slider {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+    .events {
+        &__content {
+            &__calendar {
+                width: 50%;
+            }
+    
+            &__slider {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+    .events {
+        &__content {
+            &__calendar, &__slider {
+                width: 100%;
+            }
+        }
+
+        &__content__slider--align {
+            margin-top: $spacer *2;
+
+            & .splide__toggle {
+                top: - $spacer *2;
+            }
+        }
+    }
+}
