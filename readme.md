@@ -1,6 +1,6 @@
-#[Universidad Surcolombiana](http://www.usco.edu.co/)
 ## Boilerplate 2022
-#### By: [Cesar Fernandez](https://www.linkedin.com/in/cesar-fernandez-797436207/"Cesar Fernandez link")
+#[Universidad Surcolombiana](http://www.usco.edu.co/)
+#### By: [Cesar Fernandez](https://www.linkedin.com/in/cesar-fernandez-797436207/)
  
  
 
@@ -32,9 +32,3 @@ Boilerplate desarrollado para la Universidad Surcolombiana con el objetivo de cu
 - SmartMenus
 - aria-tabs
 - responsive-tabs
-
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
