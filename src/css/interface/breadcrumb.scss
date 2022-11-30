@@ -1,0 +1,57 @@
+.breadcrumb {
+    display: flex;
+    flex: 1;
+
+    & ul {
+        display: flex;
+        @include type-font-title;
+        font-size: 80%;
+        list-style: none;
+
+        & li {
+            padding: $spacer /2 0;
+
+            & a {
+                position: relative;
+                z-index: 10;
+                padding: $spacer /2 $spacer /2 +.25 $spacer /2 $spacer /2;
+                color: $grayu-400;
+                
+                &::after {
+                    position: absolute;
+                    z-index: 1;
+                    right: 0;
+                    content: " /";
+                }
+
+                &::before {
+                    height: 3px;
+                }
+
+                &:hover, &:focus {
+                    color: $grayu-dark;
+                }
+            }
+
+            &:first-child a {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-left: $spacer /2;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+    .breadcrumb {
+        justify-content: center;
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+    .breadcrumb {
+        display: none;
+    }
+}
