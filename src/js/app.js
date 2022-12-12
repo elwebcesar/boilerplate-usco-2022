@@ -144,6 +144,18 @@ if ( document.querySelector(classDetailsGroup) ) {
 
 
 // ------------------------------------------------------------------------
+// Window scrollTo This
+// ------------------------------------------------------------------------
+import { scrollToThis, scrollToTop } from "../components/scrollTo/scrollTo";
+
+const doomScrollToThis = document.querySelectorAll('.scrollToThis');
+doomScrollToThis ? scrollToThis(doomScrollToThis) : null;
+
+const doomScrollToTop = document.getElementById("scrollToTop");
+doomScrollToThis ? scrollToTop(doomScrollToTop) : null;
+
+
+// ------------------------------------------------------------------------
 // Resize Image and Map
 // ------------------------------------------------------------------------
 import ImageResizeMap from "../components/ImageResizeMap/ImageResizeMap";

@@ -25,6 +25,10 @@
         }
     }
 
+    &__content {
+        position: relative;
+    }
+
     &__data {
         & img {
             display: initial;
@@ -70,6 +74,33 @@
             margin-bottom: $spacer *2 + $spacer /2;
         }
     }
+
+    & #scrollToTop {
+        position: absolute;
+        right: 0;
+        bottom: -$spacer *3;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        background: rgba(76, 97, 108, 0.7);
+        border: 3px solid $white;
+        border-radius: 50%;
+        opacity: .7;
+        // transition: background-color .2s ease;
+        @include animate_all(0.3s);
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, "bxl")) {
+    .footer  #scrollToTop {
+        right: $spacer;
+    }
 }
 
 @media (max-width: map-get($grid-breakpoints, "xl")) {
@@ -106,6 +137,13 @@
             & h5, & h6, & p {
                 text-align: center;
             }
+        }
+
+        & #scrollToTop {
+            position: relative;
+            left: 50%;
+            bottom: -$spacer;
+            margin-left: -1.5rem;
         }
     }
 }
